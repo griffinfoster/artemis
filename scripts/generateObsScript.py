@@ -17,6 +17,8 @@ args = parser.parse_args()
 
 configData = yaml.load(open(args.configFile))
 
+configData['generator_script'] = os.path.basename(__file__)
+
 # check for start_date
 if 'start_date' in configData:
     configData['opt_arg'] = '--start_date=%s'%configData['start_date']
