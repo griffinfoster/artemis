@@ -1,0 +1,34 @@
+# ARTEMIS3 LuMP recorder configuration
+
+LuMPPath: /home/artemis/lump-lofar-und-mpifr-pulsare/lump/bin
+
+station_name: UK608
+data_type_in: L_intComplex16_t # 8-bit mode, 488 beamlets, 122 beamlets per lane
+beamlets_per_lane: 122
+clock_speed: 200
+rcumode_array: '[5]*122'
+
+lane:
+  - id: 3
+    physical_beamlet_array: '[244:366]'
+    subband_array: '[255:377]'
+    port: 16082 # lane 3, UK608 specific
+    filename_base: B1133+16_lane3
+
+  - id: 4
+    physical_beamlet_array: '[366:488]'
+    subband_array: '[377:499]'
+    port: 16083 # lane 4, UK608 specific
+    filename_base: B1133+16_lane4
+
+duration: 3600 # seconds
+writer_type: LuMP1
+recorder_num_cores: 2
+datadir: /local_data/ARTEMIS/20190226_B1133+16
+#start_date: '2019-02-26T10:30:00Z'
+
+sourcename_array: '[B1133+16]*122'
+rightascension_array: '[3.037109]*122' # radians
+declination_array: '[0.276656]*122' # radians
+epoch_array: '[J2000]*122'
+
