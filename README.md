@@ -10,6 +10,7 @@ ARTEMIS3 scripts and documentation for LOFAR Station Beamlet Observations
 * jinja2
 * yaml
 * redis
+* astropy
 
 ### LuMP
 
