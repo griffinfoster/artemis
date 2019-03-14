@@ -1,4 +1,4 @@
-# ARTEMIS3 beamctl and LuMP recorder configuration
+# ARTEMIS3 configuration for observing a single source with 488 beamlets using the HBA in 8-bit mode
 
 beamctl:
     bitmode: 8
@@ -7,11 +7,9 @@ beamctl:
     band: '110_190'
     beamlets: '0:487'
     subbands: '12:499'
-    anadir: '3.037109,0.276656,J2000'
-    digdir: '3.037109,0.276656,J2000'
 
 LuMP:
-    LuMPPath: /home/artemis/lump-lofar-und-mpifr-pulsare/lump/bin
+    LuMPPath: /home/artemis/lump/lump/bin
     
     station_name: UK608
     data_type_in: L_intComplex16_t # 8-bit mode, 488 beamlets, 122 beamlets per lane
@@ -24,34 +22,21 @@ LuMP:
         physical_beamlet_array: '[0:122]'
         subband_array: '[111:133]'
         port: 16080 # lane 1, UK608 specific
-        filename_base: B1133+16_lane1
     
       - id: 2
         physical_beamlet_array: '[122:244]'
         subband_array: '[133:255]'
         port: 16081 # lane 2, UK608 specific
-        filename_base: B1133+16_lane2
     
       - id: 3
         physical_beamlet_array: '[244:366]'
         subband_array: '[255:377]'
         port: 16082 # lane 3, UK608 specific
-        filename_base: B1133+16_lane3
     
       - id: 4
         physical_beamlet_array: '[366:488]'
         subband_array: '[377:499]'
         port: 16083 # lane 4, UK608 specific
-        filename_base: B1133+16_lane4
     
-    duration: 3600 # seconds
     writer_type: LuMP1
     recorder_num_cores: 2
-    datadir: /local_data/ARTEMIS/20190226_B1133+16
-    #start_date: '2019-02-26T10:30:00Z'
-    
-    sourcename_array: '[B1133+16]*122'
-    rightascension_array: '[3.037109]*122' # radians
-    declination_array: '[0.276656]*122' # radians
-    epoch_array: '[J2000]*122'
-
