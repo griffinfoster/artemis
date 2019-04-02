@@ -12,7 +12,7 @@ args = parser.parse_args()
 fh = open(args.obsFile, 'r')
 for ll in fh:
     if ll.startswith('#'): continue
-    srcName, duration = ll.strip().split(' ')
+    srcName, duration, obsMode = ll.strip().split(' ')
     print('Source name:', srcName)
     
     srcDict = psrcat2yaml.dictFromPsrcat(srcName)

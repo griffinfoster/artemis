@@ -1,5 +1,7 @@
 # ARTEMIS3 configuration for observing a single source with 488 beamlets using the HBA in 8-bit mode
 
+obs_mode: HBA_single_source # unique string to label observation mode
+
 beamctl:
     bitmode: 8
     antennaset: HBA_JOINED
